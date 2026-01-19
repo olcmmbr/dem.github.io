@@ -1,20 +1,88 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой блог!</title>
+    <title>Гид Хаб — Шифры Цезаря</title>
+    <style>
+        body {
+            background-color: #0000FF; /* Синий фон */
+            color: #000000; /* Чёрный текст */
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .task {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-left: 4px solid #000;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .solution {
+            margin-top: 10px;
+            padding-left: 20px;
+            font-style: italic;
+        }
+    </style>
 </head>
-
-
-    
 <body>
-    <h1>Привет, мир!</h1>
 
-    
-<p>Иконки: 
-    <a target="_blank" href="https://icons8.com/icon/80862/firework-explosion">Новый год</a> иконка от <a target="_blank" href="https://icons8.com">Icons8</a>
-</p>
+Понедельник, 19 января 2026 года
+
+<h1>Гид Хаб — Шифры Цезаря</h1>
+
+<div class="task">
+    <strong>Задание 1:</strong> Определить ключи шифра Цезаря, если известны пары открытый текст – шифротекст:<br>
+    а. АПЕЛЬСИН – САЦЬНВЩЮ<br>
+    б. АБРИКОС – ЫЬЛГЕЙМ
+    <div class="solution">
+        <strong>Решение:</strong><br>
+        Используем алфавит из 32 букв (без «Ё»):<br>
+        А=0, Б=1, В=2, Г=3, Д=4, Е=5, Ж=6, З=7, И=8, Й=9, К=10, Л=11, М=12, Н=13, О=14, П=15, Р=16, С=17, Т=18, У=19, Ф=20, Х=21, Ц=22, Ч=23, Ш=24, Щ=25, Ъ=26, Ы=27, Ь=28, Э=29, Ю=30, Я=31.<br><br>
+        
+        а. А (0) → С (17): ключ = (17 − 0) mod 32 = <strong>17</strong>.<br>
+        Проверка по второй букве: П(15)+17=32≡0→А — совпадает. ⇒ <strong>k = 17</strong>.<br><br>
+        
+        б. А (0) → Ы (27): ключ = (27 − 0) mod 32 = <strong>27</strong>.<br>
+        Проверка: Б(1)+27=28=Ь, Р(16)+27=43≡11=Л — совпадает. ⇒ <strong>k = 27</strong>.
+    </div>
+</div>
+
+<div class="task">
+    <strong>Задание 2:</strong> Расшифруйте сообщения (0 < k < 32):<br>
+    а. ФХНЗКЧ<br>
+    б. ЦЩЕБФ
+    <div class="solution">
+        <strong>Решение:</strong><br>
+        а. Перебором находим: при k = 5 →<br>
+        Ф(20)−5=15=П, Х(21)−5=16=Р, Н(13)−5=8=И, З(7)−5=2=В, К(10)−5=5=Е, Ч(23)−5=18=Т → <strong>«ПРИВЕТ»</strong>.<br><br>
+        
+        б. При k = 20 →<br>
+        Ц(22)−20=2=В, Щ(25)−20=5=Е, Е(5)−20=−15+32=17=С, Б(1)−20=−19+32=13=Н, Ф(20)−20=0=А → <strong>«ВЕСНА»</strong>.<br><br>
+        
+        Ответы: а) <strong>ПРИВЕТ</strong> (k=5), б) <strong>ВЕСНА</strong> (k=20).
+    </div>
+</div>
+
+<div class="task">
+    <strong>Задание 3:</strong> Зашифруйте свою фамилию с ключом 10.
+    <div class="solution">
+        <strong>Фамилия: КОБЯЦКАЯ</strong><br>
+        К(10)+10=20=Ф<br>
+        О(14)+10=24=Ш<br>
+        Б(1)+10=11=Л<br>
+        Я(31)+10=41≡9=Й<br>
+        Ц(22)+10=32≡0=А<br>
+        К(10)+10=20=Ф<br>
+        А(0)+10=10=К<br>
+        Я(31)+10=41≡9=Й<br>
+        ⇒ Зашифрованная фамилия: <strong>ФШЛЙАФКЙ</strong>.
+    </div>
+</div>
+
 </body>
 </html>
