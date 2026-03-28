@@ -27,6 +27,21 @@
         .jupyter-output .result {
             color: #d63384;
         }
+        /* Стили для цитаты-определения */
+        .definition-quote {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-style: italic;
+            border-left: 4px solid rgba(255,255,255,0.5);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .definition-quote strong {
+            font-style: normal;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -67,6 +82,12 @@ for i in range(5):
     </div>
     
     <p>💡 <em>Вывод:</em> При увеличении шума в данных ошибка на тесте выросла, что ожидаемо. Модель с новыми весами даёт смещённые прогнозы — нужно дообучить на более репрезентативной выборке.</p>
+    
+    <!-- 🔹 ВСТАВЛЕННАЯ ФРАЗА О НЕЙРОСЕТИ 🔹 -->
+    <div class="definition-quote">
+        <strong>Нейросеть — это универсальный ученик:</strong> вы показываете ему примеры и говорите, где он ошибся, а он сам настраивает свои «внутренние настройки», чтобы в следующий раз быть точнее.
+    </div>
+    
     <p>📥 <a href="notebooks/prediction_test_v2.ipynb" download>Скачать ноутбук (.ipynb)</a></p>
 
     <!-- ==================== ОСТАЛЬНОЙ КОД БЛОГА (без изменений) ==================== -->
